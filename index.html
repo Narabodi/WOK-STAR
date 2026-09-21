@@ -8,293 +8,254 @@
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  theme: { extend: {
-    colors: { ember:'#FF6B35', charcoal:'#1A1614', panel:'#241E1A', lime:'#9BE564', cream:'#FFF8F0', chili:'#E63946' },
-    fontFamily: { head:['Anuphan','sans-serif'], body:['IBM Plex Sans Thai','sans-serif'] }
-  }}
-}
+tailwind.config={theme:{extend:{
+ colors:{ember:'#FF6B35',charcoal:'#1A1614',panel:'#241E1A',lime:'#9BE564',cream:'#FFF8F0',chili:'#E63946'},
+ fontFamily:{head:['Anuphan','sans-serif'],body:['IBM Plex Sans Thai','sans-serif']}
+}}}
 </script>
 <style>
-  body{background:#1A1614;color:#FFF8F0;font-family:'IBM Plex Sans Thai',sans-serif}
-  .card-img{background-size:cover;background-position:center}
-  ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#FF6B35;border-radius:8px}
-  .fade-in{animation:f .4s ease}@keyframes f{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+ body{background:#1A1614;color:#FFF8F0;font-family:'IBM Plex Sans Thai',sans-serif}
+ ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#FF6B35;border-radius:8px}
+ .fade-in{animation:f .4s ease}@keyframes f{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body class="font-body">
 
-<!-- ===== HEADER ===== -->
 <header class="sticky top-0 z-40 bg-charcoal/95 backdrop-blur border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      <span class="text-2xl">🍳</span>
-      <div>
-        <h1 class="font-head font-bold text-lg leading-none">WOK <span class="text-ember">STAR</span></h1>
-        <p class="text-[10px] text-cream/50 leading-none mt-0.5">ตามสั่งตัวท็อป</p>
-      </div>
-    </div>
-    <nav class="hidden md:flex gap-6 text-sm text-cream/70">
-      <a href="#menu" class="hover:text-ember transition">เมนู</a>
-      <a href="#build" class="hover:text-ember transition">จัดจานเอง</a>
-      <a href="#about" class="hover:text-ember transition">เกี่ยวกับเรา</a>
-    </nav>
-    <button onclick="toggleCart()" class="relative bg-ember hover:bg-ember/85 transition px-4 py-2 rounded-full text-sm font-semibold text-charcoal">
-      🛒 ตะกร้า
-      <span id="cartBadge" class="absolute -top-1 -right-1 bg-chili text-white text-[10px] w-5 h-5 rounded-full grid place-items-center">0</span>
-    </button>
+ <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+  <div class="flex items-center gap-2">
+   <span class="text-2xl">🍳</span>
+   <div><h1 class="font-head font-bold text-lg leading-none">WOK <span class="text-ember">STAR</span></h1>
+   <p class="text-[10px] text-cream/50 leading-none mt-0.5">ตามสั่งตัวท็อป</p></div>
   </div>
+  <nav class="hidden md:flex gap-6 text-sm text-cream/70">
+   <a href="#menu" class="hover:text-ember transition">เมนู</a>
+   <a href="#build" class="hover:text-ember transition">จัดจานเอง</a>
+   <a href="#about" class="hover:text-ember transition">เกี่ยวกับเรา</a>
+  </nav>
+  <button onclick="toggleCart()" class="relative bg-ember hover:bg-ember/85 transition px-4 py-2 rounded-full text-sm font-semibold text-charcoal">
+   🛒 ตะกร้า<span id="cartBadge" class="absolute -top-1 -right-1 bg-chili text-white text-[10px] w-5 h-5 rounded-full grid place-items-center">0</span>
+  </button>
+ </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center">
-  <span class="inline-block bg-lime/15 text-lime text-xs px-3 py-1 rounded-full mb-4">⚡ ปรุงสดใหม่ พร้อมเสิร์ฟใน 12–15 นาที</span>
-  <h2 class="font-head font-bold text-3xl md:text-5xl leading-tight">ตามสั่งที่ไม่ธรรมดา<br><span class="text-ember">ตามใจที่ไม่เหมือนใคร</span></h2>
-  <p class="text-cream/60 mt-4 max-w-xl mx-auto text-sm md:text-base">วัตถุดิบพรีเมียม บอกแคลอรี่และโปรตีนทุกจาน เลือกได้ตามเป้าหมายสุขภาพของคุณ</p>
-  <div class="flex gap-3 justify-center mt-8">
-    <a href="#menu" class="bg-ember text-charcoal font-semibold px-6 py-3 rounded-full hover:scale-105 transition">ดูเมนูทั้งหมด</a>
-    <a href="#build" class="border border-cream/25 px-6 py-3 rounded-full hover:border-ember hover:text-ember transition">จัดจานเอง</a>
-  </div>
+ <span class="inline-block bg-lime/15 text-lime text-xs px-3 py-1 rounded-full mb-4">⚡ ปรุงสดใหม่ พร้อมเสิร์ฟใน 12–15 นาที</span>
+ <h2 class="font-head font-bold text-3xl md:text-5xl leading-tight">ตามสั่งที่ไม่ธรรมดา<br><span class="text-ember">ตามใจที่ไม่เหมือนใคร</span></h2>
+ <p class="text-cream/60 mt-4 max-w-xl mx-auto text-sm md:text-base">วัตถุดิบพรีเมียม บอกแคลอรี่และโปรตีนทุกจาน เลือกได้ตามเป้าหมายสุขภาพของคุณ</p>
+ <div class="flex gap-3 justify-center mt-8">
+  <a href="#menu" class="bg-ember text-charcoal font-semibold px-6 py-3 rounded-full hover:scale-105 transition">ดูเมนูทั้งหมด</a>
+  <a href="#build" class="border border-cream/25 px-6 py-3 rounded-full hover:border-ember hover:text-ember transition">จัดจานเอง</a>
+ </div>
 </section>
 
-<!-- ===== FILTER + SEARCH ===== -->
 <section id="menu" class="max-w-6xl mx-auto px-4">
-  <h3 class="font-head font-bold text-2xl mb-1">เมนูแนะนำ</h3>
-  <p class="text-cream/50 text-sm mb-5">กรองตามเป้าหมายสุขภาพของคุณได้เลย</p>
-
-  <input id="search" oninput="render()" type="text" placeholder="🔍 ค้นหาเมนู เช่น กะเพรา, แซลมอน..."
-    class="w-full bg-panel border border-white/10 rounded-xl px-4 py-3 text-sm mb-4 outline-none focus:border-ember transition">
-
-  <div id="chips" class="flex gap-2 overflow-x-auto pb-3 mb-6"></div>
-  <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-  <p id="empty" class="hidden text-center text-cream/40 py-12">ไม่พบเมนูที่ค้นหา ลองคำอื่นดูนะครับ 🍽️</p>
+ <h3 class="font-head font-bold text-2xl mb-1">เมนูแนะนำ</h3>
+ <p class="text-cream/50 text-sm mb-5">กรองตามเป้าหมายสุขภาพของคุณได้เลย</p>
+ <input id="search" oninput="render()" type="text" placeholder="🔍 ค้นหาเมนู เช่น กะเพรา, แซลมอน..."
+  class="w-full bg-panel border border-white/10 rounded-xl px-4 py-3 text-sm mb-4 outline-none focus:border-ember transition">
+ <div id="chips" class="flex gap-2 overflow-x-auto pb-3 mb-6"></div>
+ <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+ <p id="empty" class="hidden text-center text-cream/40 py-12">ไม่พบเมนูที่ค้นหา ลองคำอื่นดูนะครับ 🍽️</p>
 </section>
 
-<!-- ===== BUILD YOUR OWN ===== -->
 <section id="build" class="max-w-6xl mx-auto px-4 py-16">
-  <div class="bg-gradient-to-br from-ember/20 to-panel border border-ember/25 rounded-3xl p-6 md:p-10">
-    <h3 class="font-head font-bold text-2xl">🥣 จัดจานเอง — Build Your Own Bowl</h3>
-    <p class="text-cream/60 text-sm mt-1 mb-6">เลือกเอง 4 ขั้นตอน ระบบคำนวณแคลอรี่ให้แบบเรียลไทม์</p>
-    <div id="builder" class="grid md:grid-cols-4 gap-4"></div>
-    <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
-      <div class="flex gap-6 text-sm">
-        <div><span class="text-cream/50">พลังงาน</span> <b id="bKcal" class="text-lime">0</b> kcal</div>
-        <div><span class="text-cream/50">โปรตีน</span> <b id="bProt" class="text-lime">0</b> g</div>
-        <div><span class="text-cream/50">ราคา</span> <b id="bPrice" class="text-ember text-lg">฿0</b></div>
-      </div>
-      <button onclick="addCustom()" class="bg-ember text-charcoal font-semibold px-6 py-3 rounded-full hover:scale-105 transition">เพิ่มลงตะกร้า</button>
-    </div>
+ <div class="bg-gradient-to-br from-ember/20 to-panel border border-ember/25 rounded-3xl p-6 md:p-10">
+  <h3 class="font-head font-bold text-2xl">🥣 จัดจานเอง — Build Your Own Bowl</h3>
+  <p class="text-cream/60 text-sm mt-1 mb-6">เลือกเอง 4 ขั้นตอน ระบบคำนวณแคลอรี่ให้แบบเรียลไทม์</p>
+  <div id="builder" class="grid md:grid-cols-4 gap-4"></div>
+  <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
+   <div class="flex gap-6 text-sm">
+    <div><span class="text-cream/50">พลังงาน</span> <b id="bKcal" class="text-lime">0</b> kcal</div>
+    <div><span class="text-cream/50">โปรตีน</span> <b id="bProt" class="text-lime">0</b> g</div>
+    <div><span class="text-cream/50">ราคา</span> <b id="bPrice" class="text-ember text-lg">฿0</b></div>
+   </div>
+   <button onclick="addCustom()" class="bg-ember text-charcoal font-semibold px-6 py-3 rounded-full hover:scale-105 transition">เพิ่มลงตะกร้า</button>
   </div>
+ </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section id="about" class="max-w-6xl mx-auto px-4 pb-20 grid md:grid-cols-3 gap-5">
-  <div class="bg-panel rounded-2xl p-6"><div class="text-3xl mb-2">🌿</div><h4 class="font-head font-bold mb-1">วัตถุดิบสดทุกวัน</h4><p class="text-cream/55 text-sm">รับผักจากฟาร์มพันธมิตรทุกเช้า ไม่ใช้ผงชูรสในทุกเมนู</p></div>
-  <div class="bg-panel rounded-2xl p-6"><div class="text-3xl mb-2">📊</div><h4 class="font-head font-bold mb-1">โปร่งใสเรื่องโภชนาการ</h4><p class="text-cream/55 text-sm">ทุกจานผ่านการคำนวณโดยนักโภชนาการ บอกครบทั้งแคลอรี่ โปรตีน โซเดียม</p></div>
-  <div class="bg-panel rounded-2xl p-6"><div class="text-3xl mb-2">⚡</div><h4 class="font-head font-bold mb-1">เร็วจริง ไม่ต้องรอ</h4><p class="text-cream/55 text-sm">ระบบครัวดิจิทัลจัดคิวอัตโนมัติ เฉลี่ยเสิร์ฟใน 13 นาที</p></div>
+ <div class="bg-panel rounded-2xl p-6"><div class="text-3xl mb-2">🌿</div><h4 class="font-head font-bold mb-1">วัตถุดิบสดทุกวัน</h4><p class="text-cream/55 text-sm">รับผักจากฟาร์มพันธมิตรทุกเช้า ไม่ใช้ผงชูรสในทุกเมนู</p></div>
+ <div class="bg-panel rounded-2xl p-6"><div class="text-3xl mb-2">📊</div><h4 class="font-head font-bold mb-1">โปร่งใสเรื่องโภชนาการ</h4><p class="text-cream/55 text-sm">ทุกจานผ่านการคำนวณโดยนักโภชนาการ บอกครบทั้งแคลอรี่ โปรตีน โซเดียม</p></div>
+ <div class="bg-panel rounded-2xl p-6"><div class="text-3xl mb-2">⚡</div><h4 class="font-head font-bold mb-1">เร็วจริง ไม่ต้องรอ</h4><p class="text-cream/55 text-sm">ระบบครัวดิจิทัลจัดคิวอัตโนมัติ เฉลี่ยเสิร์ฟใน 13 นาที</p></div>
 </section>
 
 <footer class="border-t border-white/10 py-8 text-center text-cream/40 text-sm">
-  <p class="font-head text-cream/70 mb-1">WOK STAR — ตามสั่งตัวท็อป</p>
-  <p>เปิดทุกวัน 10:00–21:00 · โทร 02-XXX-XXXX · LINE @wokstar</p>
+ <p class="font-head text-cream/70 mb-1">WOK STAR — ตามสั่งตัวท็อป</p>
+ <p>เปิดทุกวัน 10:00–21:00 · โทร 02-XXX-XXXX · LINE @wokstar</p>
 </footer>
 
-<!-- ===== MODAL ===== -->
 <div id="modal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm p-4 overflow-y-auto" onclick="if(event.target===this)closeModal()">
-  <div id="modalBox" class="bg-panel max-w-lg mx-auto my-8 rounded-3xl overflow-hidden fade-in"></div>
+ <div id="modalBox" class="bg-panel max-w-lg mx-auto my-8 rounded-3xl overflow-hidden fade-in"></div>
 </div>
 
-<!-- ===== CART DRAWER ===== -->
 <div id="cartWrap" class="hidden fixed inset-0 z-50 bg-black/60" onclick="if(event.target===this)toggleCart()">
-  <aside class="absolute right-0 top-0 h-full w-full max-w-sm bg-panel flex flex-col">
-    <div class="p-5 border-b border-white/10 flex justify-between items-center">
-      <h3 class="font-head font-bold text-lg">🛒 ตะกร้าของคุณ</h3>
-      <button onclick="toggleCart()" class="text-cream/50 hover:text-ember text-xl">✕</button>
-    </div>
-    <div id="cartList" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
-    <div class="p-5 border-t border-white/10">
-      <div class="flex justify-between mb-1 text-sm text-cream/60"><span>รวมทั้งหมด</span><span id="cartCount">0 รายการ</span></div>
-      <div class="flex justify-between mb-4"><span class="font-head font-bold">ยอดชำระ</span><span id="cartTotal" class="font-head font-bold text-2xl text-ember">฿0</span></div>
-      <button onclick="checkout()" class="w-full bg-ember text-charcoal font-bold py-3.5 rounded-full hover:scale-[1.02] transition">ยืนยันคำสั่งซื้อ</button>
-      <p class="text-center text-[11px] text-cream/40 mt-2">สั่งได้เลย ไม่ต้องสมัครสมาชิก</p>
-    </div>
-  </aside>
+ <aside class="absolute right-0 top-0 h-full w-full max-w-sm bg-panel flex flex-col">
+  <div class="p-5 border-b border-white/10 flex justify-between items-center">
+   <h3 class="font-head font-bold text-lg">🛒 ตะกร้าของคุณ</h3>
+   <button onclick="toggleCart()" class="text-cream/50 hover:text-ember text-xl">✕</button>
+  </div>
+  <div id="cartList" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
+  <div class="p-5 border-t border-white/10">
+   <div class="flex justify-between mb-1 text-sm text-cream/60"><span>รวมทั้งหมด</span><span id="cartCount">0 รายการ</span></div>
+   <div class="flex justify-between mb-4"><span class="font-head font-bold">ยอดชำระ</span><span id="cartTotal" class="font-head font-bold text-2xl text-ember">฿0</span></div>
+   <button onclick="checkout()" class="w-full bg-ember text-charcoal font-bold py-3.5 rounded-full hover:scale-[1.02] transition">ยืนยันคำสั่งซื้อ</button>
+   <p class="text-center text-[11px] text-cream/40 mt-2">สั่งได้เลย ไม่ต้องสมัครสมาชิก</p>
+  </div>
+ </aside>
 </div>
 
 <script>
-/* ---------- DATA ---------- */
 const MENU=[
- const MENU=[
- {id:1,name:"กะเพราคางแซลมอน ไข่ออนเซ็น",price:149,photo:"images/menu-1.jpg",img:"🐟",bg:"#3a2c22",kcal:520,protein:34,carb:48,fat:22,sodium:780,spice:3,
-  tags:["โปรตีนสูง","โอเมก้า-3"],ing:["คางแซลมอนนอร์เวย์","ใบกะเพราแดง","พริกขี้หนูสวน","กระเทียมไทย","ไข่ออนเซ็น","ข้าวหอมมะลิ"],
-  allergen:"ปลา, ไข่, ถั่วเหลือง",desc:"คางแซลมอนย่างไฟจนหนังกรอบ ผัดกะเพราไฟแรงกลิ่นหอมฉุย ราดไข่ออนเซ็นเยิ้มๆ"},
- {id:2,name:"ข้าวผัดต้มยำกุ้ง ซอสทรัฟเฟิล",price:159,photo:"images/menu-2.jpg",img:"🍤",bg:"#402a20",kcal:610,protein:31,carb:66,fat:24,sodium:920,spice:3,
-  tags:["โปรตีนสูง","ซิกเนเจอร์"],ing:["กุ้งแม่น้ำ","น้ำพริกเผา","ตะไคร้ ใบมะกรูด","ซอสทรัฟเฟิลดำ","ข้าวหอมมะลิ"],
-  allergen:"กุ้ง, นม",desc:"ต้มยำจัดจ้านเจอกลิ่นทรัฟเฟิลหรูๆ ความอร่อยที่ไม่มีใครคาดคิด"},
- {id:3,name:"ผัดซีอิ๊วเส้นบุก โปรตีนคู่",price:129,photo:"images/menu-3.jpg",img:"🍜",bg:"#2b3326",kcal:340,protein:38,carb:18,fat:11,sodium:640,spice:0,
-  tags:["คีโต","ต่ำกว่า 500 kcal","โปรตีนสูง"],ing:["เส้นบุกญี่ปุ่น","อกไก่","กุ้งสด","คะน้าฮ่องกง","ซีอิ๊วดำหวานสูตรลดน้ำตาล"],
-  allergen:"กุ้ง, ถั่วเหลือง",desc:"ผัดซีอิ๊วรสคุ้นเคยแต่แคลอรี่ต่ำกว่าครึ่ง เส้นบุกหนึบ โปรตีนแน่นถึง 38 กรัม"},
- {id:4,name:"คั่วกลิ้งไก่กรอบ ข้าวคีนัว",price:139,photo:"images/menu-4.jpg",img:"🌶️",bg:"#3d2320",kcal:480,protein:33,carb:42,fat:18,sodium:810,spice:5,
-  tags:["ไฟเบอร์สูง","ต่ำกว่า 500 kcal"],ing:["ไก่บ้านสับ","พริกแกงใต้สูตรโบราณ","ใบมะกรูดซอย","คีนัวขาว-แดง"],
-  allergen:"กุ้ง (กะปิ)",desc:"ใต้แท้เผ็ดจัดจ้าน คู่ข้าวคีนัวไฟเบอร์สูง อิ่มนานไม่ง่วง"},
- {id:5,name:"ข้าวไข่ข้นปู ซอสมะขามคาราเมล",price:169,photo:"images/menu-5.jpg",img:"🦀",bg:"#3d3320",kcal:590,protein:29,carb:58,fat:27,sodium:700,spice:1,
-  tags:["โปรตีนสูง","ถ่ายรูปสวย"],ing:["เนื้อปูก้อน","ไข่ไก่สด 3 ฟอง","ครีมสด","ซอสมะขามเปียกเคี่ยว","ข้าวหอมมะลิ"],
-  allergen:"ปู, ไข่, นม",desc:"ไข่ข้นเยิ้มไหลนุ่ม เนื้อปูเต็มคำ ตัดรสด้วยมะขามคาราเมลเปรี้ยวหวาน"},
- {id:6,name:"กะเพราเห็ดทรัฟเฟิล Plant-Based",price:119,photo:"images/menu-6.jpg",img:"🍄",bg:"#26301f",kcal:390,protein:21,carb:44,fat:14,sodium:590,spice:2,
-  tags:["วีแกน","ต่ำกว่า 500 kcal"],ing:["เห็ดออรินจิ เห็ดแครง เห็ดหอม","โปรตีนถั่วเหลืองสกัด","ใบกะเพรา","น้ำมันทรัฟเฟิล","ข้าวกล้อง"],
-  allergen:"ถั่วเหลือง",desc:"วีแกน 100% แต่อูมามิแน่นกว่าเนื้อ ด้วยเห็ด 3 ชนิดและน้ำมันทรัฟเฟิล"},
- {id:7,name:"ราดหน้าเส้นบุก น้ำข้นคอลลาเจน",price:135,photo:"images/menu-7.jpg",img:"🍲",bg:"#2c2b23",kcal:410,protein:30,carb:32,fat:16,sodium:520,spice:0,
-  tags:["โซเดียมต่ำ","ต่ำกว่า 500 kcal"],ing:["เส้นบุก","น้ำซุปกระดูกเคี่ยว 8 ชม.","หมูหมัก","คะน้ายอด","เห็ดหอมสด"],
-  allergen:"ถั่วเหลือง",desc:"น้ำราดข้นจากคอลลาเจนธรรมชาติ ไม่ใช้แป้งมันเยอะ โซเดียมต่ำกว่าราดหน้าทั่วไป 35%"},
- {id:8,name:"หมูกรอบพริกเกลือ ข้าวไรซ์เบอร์รี",price:145,photo:"images/menu-8.jpg",img:"🥓",bg:"#3a2b26",kcal:540,protein:28,carb:50,fat:25,sodium:760,spice:2,
-  tags:["GI ต่ำ","ทอดน้ำมันน้อย"],ing:["หมูสามชั้น Air-fried","พริกไทยดำโขลก","กระเทียมเจียว","ข้าวไรซ์เบอร์รี"],
-  allergen:"ถั่วเหลือง",desc:"หมูกรอบทอดด้วยลมร้อน ลดน้ำมัน 40% แต่ยังกรอบดัง เสิร์ฟคู่ข้าวไรซ์เบอร์รี"},
- {id:9,name:"ผัดพริกแกงแซลมอน Keto Bowl",price:165,photo:"images/menu-9.jpg",img:"🥗",bg:"#2a3128",kcal:430,protein:36,carb:9,fat:28,sodium:680,spice:4,
-  tags:["คีโต","ต่ำกว่า 500 kcal","โปรตีนสูง"],ing:["แซลมอนแล่สด","พริกแกงเผ็ดสูตรบ้าน","ถั่วฝักยาว","ดอกกะหล่ำสับแทนข้าว"],
-  allergen:"ปลา, กุ้ง (กะปิ)",desc:"คาร์บแค่ 9 กรัม ใช้ดอกกะหล่ำสับแทนข้าว สายคีโตกินได้สบายใจ"},
- {id:10,name:"ข้าวยำทูน่าสไปซี่ สไตล์โพเกะ",price:139,photo:"images/menu-10.jpg",img:"🍱",bg:"#28312c",kcal:450,protein:32,carb:47,fat:13,sodium:610,spice:2,
-  tags:["ไขมันต่ำ","ต่ำกว่า 500 kcal"],ing:["ทูน่าเกรดซาชิมิ","ข้าวกล้องหอมมะลิ","อะโวคาโด","ตะไคร้ ใบมะกรูดซอย","น้ำบูดูสูตรใส"],
-  allergen:"ปลา, งา",desc:"ข้าวยำปักษ์ใต้เจอ Poke Bowl ฮาวาย สดชื่น เบาท้อง โปรตีนสูง"}
+{id:1,name:"กะเพราคางแซลมอน ไข่ออนเซ็น",price:149,photo:"images/menu-1.jpg",img:"🐟",bg:"#3a2c22",kcal:520,protein:34,carb:48,fat:22,sodium:780,spice:3,tags:["โปรตีนสูง","โอเมก้า-3"],ing:["คางแซลมอนนอร์เวย์","ใบกะเพราแดง","พริกขี้หนูสวน","กระเทียมไทย","ไข่ออนเซ็น","ข้าวหอมมะลิ"],allergen:"ปลา, ไข่, ถั่วเหลือง",desc:"คางแซลมอนย่างไฟจนหนังกรอบ ผัดกะเพราไฟแรงกลิ่นหอมฉุย ราดไข่ออนเซ็นเยิ้มๆ"},
+{id:2,name:"ข้าวผัดต้มยำกุ้ง ซอสทรัฟเฟิล",price:159,photo:"images/menu-2.jpg",img:"🍤",bg:"#402a20",kcal:610,protein:31,carb:66,fat:24,sodium:920,spice:3,tags:["โปรตีนสูง","ซิกเนเจอร์"],ing:["กุ้งแม่น้ำ","น้ำพริกเผา","ตะไคร้ ใบมะกรูด","ซอสทรัฟเฟิลดำ","ข้าวหอมมะลิ"],allergen:"กุ้ง, นม",desc:"ต้มยำจัดจ้านเจอกลิ่นทรัฟเฟิลหรูๆ ความอร่อยที่ไม่มีใครคาดคิด"},
+{id:3,name:"ผัดซีอิ๊วเส้นบุก โปรตีนคู่",price:129,photo:"images/menu-3.jpg",img:"🍜",bg:"#2b3326",kcal:340,protein:38,carb:18,fat:11,sodium:640,spice:0,tags:["คีโต","ต่ำกว่า 500 kcal","โปรตีนสูง"],ing:["เส้นบุกญี่ปุ่น","อกไก่","กุ้งสด","คะน้าฮ่องกง","ซีอิ๊วดำหวานสูตรลดน้ำตาล"],allergen:"กุ้ง, ถั่วเหลือง",desc:"ผัดซีอิ๊วรสคุ้นเคยแต่แคลอรี่ต่ำกว่าครึ่ง เส้นบุกหนึบ โปรตีนแน่นถึง 38 กรัม"},
+{id:4,name:"คั่วกลิ้งไก่กรอบ ข้าวคีนัว",price:139,photo:"images/menu-4.jpg",img:"🌶️",bg:"#3d2320",kcal:480,protein:33,carb:42,fat:18,sodium:810,spice:5,tags:["ไฟเบอร์สูง","ต่ำกว่า 500 kcal"],ing:["ไก่บ้านสับ","พริกแกงใต้สูตรโบราณ","ใบมะกรูดซอย","คีนัวขาว-แดง"],allergen:"กุ้ง (กะปิ)",desc:"ใต้แท้เผ็ดจัดจ้าน คู่ข้าวคีนัวไฟเบอร์สูง อิ่มนานไม่ง่วง"},
+{id:5,name:"ข้าวไข่ข้นปู ซอสมะขามคาราเมล",price:169,photo:"images/menu-5.jpg",img:"🦀",bg:"#3d3320",kcal:590,protein:29,carb:58,fat:27,sodium:700,spice:1,tags:["โปรตีนสูง","ถ่ายรูปสวย"],ing:["เนื้อปูก้อน","ไข่ไก่สด 3 ฟอง","ครีมสด","ซอสมะขามเปียกเคี่ยว","ข้าวหอมมะลิ"],allergen:"ปู, ไข่, นม",desc:"ไข่ข้นเยิ้มไหลนุ่ม เนื้อปูเต็มคำ ตัดรสด้วยมะขามคาราเมลเปรี้ยวหวาน"},
+{id:6,name:"กะเพราเห็ดทรัฟเฟิล Plant-Based",price:119,photo:"images/menu-6.jpg",img:"🍄",bg:"#26301f",kcal:390,protein:21,carb:44,fat:14,sodium:590,spice:2,tags:["วีแกน","ต่ำกว่า 500 kcal"],ing:["เห็ดออรินจิ เห็ดแครง เห็ดหอม","โปรตีนถั่วเหลืองสกัด","ใบกะเพรา","น้ำมันทรัฟเฟิล","ข้าวกล้อง"],allergen:"ถั่วเหลือง",desc:"วีแกน 100% แต่อูมามิแน่นกว่าเนื้อ ด้วยเห็ด 3 ชนิดและน้ำมันทรัฟเฟิล"},
+{id:7,name:"ราดหน้าเส้นบุก น้ำข้นคอลลาเจน",price:135,photo:"images/menu-7.jpg",img:"🍲",bg:"#2c2b23",kcal:410,protein:30,carb:32,fat:16,sodium:520,spice:0,tags:["โซเดียมต่ำ","ต่ำกว่า 500 kcal"],ing:["เส้นบุก","น้ำซุปกระดูกเคี่ยว 8 ชม.","หมูหมัก","คะน้ายอด","เห็ดหอมสด"],allergen:"ถั่วเหลือง",desc:"น้ำราดข้นจากคอลลาเจนธรรมชาติ ไม่ใช้แป้งมันเยอะ โซเดียมต่ำกว่าราดหน้าทั่วไป 35%"},
+{id:8,name:"หมูกรอบพริกเกลือ ข้าวไรซ์เบอร์รี",price:145,photo:"images/menu-8.jpg",img:"🥓",bg:"#3a2b26",kcal:540,protein:28,carb:50,fat:25,sodium:760,spice:2,tags:["GI ต่ำ","ทอดน้ำมันน้อย"],ing:["หมูสามชั้น Air-fried","พริกไทยดำโขลก","กระเทียมเจียว","ข้าวไรซ์เบอร์รี"],allergen:"ถั่วเหลือง",desc:"หมูกรอบทอดด้วยลมร้อน ลดน้ำมัน 40% แต่ยังกรอบดัง เสิร์ฟคู่ข้าวไรซ์เบอร์รี"},
+{id:9,name:"ผัดพริกแกงแซลมอน Keto Bowl",price:165,photo:"images/menu-9.jpg",img:"🥗",bg:"#2a3128",kcal:430,protein:36,carb:9,fat:28,sodium:680,spice:4,tags:["คีโต","ต่ำกว่า 500 kcal","โปรตีนสูง"],ing:["แซลมอนแล่สด","พริกแกงเผ็ดสูตรบ้าน","ถั่วฝักยาว","ดอกกะหล่ำสับแทนข้าว"],allergen:"ปลา, กุ้ง (กะปิ)",desc:"คาร์บแค่ 9 กรัม ใช้ดอกกะหล่ำสับแทนข้าว สายคีโตกินได้สบายใจ"},
+{id:10,name:"ข้าวยำทูน่าสไปซี่ สไตล์โพเกะ",price:139,photo:"images/menu-10.jpg",img:"🍱",bg:"#28312c",kcal:450,protein:32,carb:47,fat:13,sodium:610,spice:2,tags:["ไขมันต่ำ","ต่ำกว่า 500 kcal"],ing:["ทูน่าเกรดซาชิมิ","ข้าวกล้องหอมมะลิ","อะโวคาโด","ตะไคร้ ใบมะกรูดซอย","น้ำบูดูสูตรใส"],allergen:"ปลา, งา",desc:"ข้าวยำปักษ์ใต้เจอ Poke Bowl ฮาวาย สดชื่น เบาท้อง โปรตีนสูง"}
 ];
 const FILTERS=["ทั้งหมด","โปรตีนสูง","คีโต","วีแกน","ต่ำกว่า 500 kcal","เผ็ดจัด"];
-let active="ทั้งหมด", cart=[];
+let active="ทั้งหมด",cart=[];
 
-/* ---------- RENDER CHIPS ---------- */
-document.getElementById('chips').innerHTML=FILTERS.map(f=>
- `<button onclick="setF('${f}')" data-f="${f}" class="chip whitespace-nowrap px-4 py-2 rounded-full text-sm border transition">${f}</button>`).join('');
+function pic(m,h){
+ if(m.photo) return '<img src="'+m.photo+'" alt="'+m.name+'" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.outerHTML=\'<span class=&quot;w-full h-full grid place-items-center text-6xl&quot;>'+m.img+'</span>\'">';
+ return '<span class="w-full h-full grid place-items-center text-6xl">'+m.img+'</span>';
+}
+
+document.getElementById('chips').innerHTML=FILTERS.map(function(f){
+ return '<button onclick="setF(\''+f+'\')" data-f="'+f+'" class="chip whitespace-nowrap px-4 py-2 rounded-full text-sm border transition">'+f+'</button>';
+}).join('');
 
 function setF(f){active=f;render()}
 
-/* ---------- RENDER GRID ---------- */
 function render(){
-  document.querySelectorAll('.chip').forEach(c=>{
-    c.className='chip whitespace-nowrap px-4 py-2 rounded-full text-sm border transition '+
-    (c.dataset.f===active?'bg-ember text-charcoal border-ember font-semibold':'border-white/15 text-cream/65 hover:border-ember');
-  });
-  const q=document.getElementById('search').value.trim().toLowerCase();
-  const list=MENU.filter(m=>{
-    const okF = active==="ทั้งหมด" ? true
-      : active==="เผ็ดจัด" ? m.spice>=4
-      : m.tags.includes(active);
-    const okQ = !q || m.name.toLowerCase().includes(q) || m.ing.join(' ').toLowerCase().includes(q);
-    return okF && okQ;
-  });
-  document.getElementById('empty').classList.toggle('hidden',list.length>0);
-  document.getElementById('grid').innerHTML=list.map(m=>`
-   <article class="bg-panel rounded-2xl overflow-hidden fade-in group">
-          <div class="h-44 relative overflow-hidden" style="background:linear-gradient(140deg,${m.bg},#1A1614)">
-       ${m.photo ? `<img src="${m.photo}" alt="${m.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">` : `<span class="w-full h-full grid place-items-center text-6xl">${m.img}</span>`}
-
-       <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-         ${m.tags.slice(0,2).map(t=>`<span class="bg-lime/20 text-lime text-[10px] px-2 py-0.5 rounded-full backdrop-blur">${t}</span>`).join('')}
-       </div>
-       <div class="absolute top-3 right-3 text-xs">${'🌶️'.repeat(m.spice)||''}</div>
-     </div>
-     <div class="p-4">
-       <h4 class="font-head font-bold text-[15px] leading-snug mb-2 h-11">${m.name}</h4>
-       <div class="flex gap-3 text-[11px] text-cream/50 mb-3">
-         <span>🔥 ${m.kcal} kcal</span><span>💪 โปรตีน ${m.protein}g</span>
-       </div>
-       <div class="flex items-center justify-between">
-         <span class="font-head font-bold text-xl text-ember">฿${m.price}</span>
-         <div class="flex gap-2">
-           <button onclick="openModal(${m.id})" class="text-xs border border-white/15 px-3 py-2 rounded-full hover:border-ember hover:text-ember transition">รายละเอียด</button>
-           <button onclick="add(${m.id})" class="text-xs bg-ember text-charcoal font-semibold px-3.5 py-2 rounded-full hover:scale-105 transition">+ เพิ่ม</button>
-         </div>
-       </div>
-     </div>
-   </article>`).join('');
+ document.querySelectorAll('.chip').forEach(function(c){
+  c.className='chip whitespace-nowrap px-4 py-2 rounded-full text-sm border transition '+
+  (c.dataset.f===active?'bg-ember text-charcoal border-ember font-semibold':'border-white/15 text-cream/65 hover:border-ember');
+ });
+ var q=document.getElementById('search').value.trim().toLowerCase();
+ var list=MENU.filter(function(m){
+  var okF = active==="ทั้งหมด" ? true : (active==="เผ็ดจัด" ? m.spice>=4 : m.tags.indexOf(active)>-1);
+  var okQ = !q || m.name.toLowerCase().indexOf(q)>-1 || m.ing.join(' ').toLowerCase().indexOf(q)>-1;
+  return okF && okQ;
+ });
+ document.getElementById('empty').classList.toggle('hidden',list.length>0);
+ document.getElementById('grid').innerHTML=list.map(function(m){
+  return '<article class="bg-panel rounded-2xl overflow-hidden fade-in group">'+
+   '<div class="h-44 relative overflow-hidden" style="background:linear-gradient(140deg,'+m.bg+',#1A1614)">'+
+    pic(m)+
+    '<div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">'+
+     m.tags.slice(0,2).map(function(t){return '<span class="bg-black/50 text-lime text-[10px] px-2 py-0.5 rounded-full backdrop-blur">'+t+'</span>'}).join('')+
+    '</div>'+
+    '<div class="absolute top-3 right-3 text-xs z-10">'+'🌶️'.repeat(m.spice)+'</div>'+
+   '</div>'+
+   '<div class="p-4">'+
+    '<h4 class="font-head font-bold text-[15px] leading-snug mb-2 h-11">'+m.name+'</h4>'+
+    '<div class="flex gap-3 text-[11px] text-cream/50 mb-3"><span>🔥 '+m.kcal+' kcal</span><span>💪 โปรตีน '+m.protein+'g</span></div>'+
+    '<div class="flex items-center justify-between">'+
+     '<span class="font-head font-bold text-xl text-ember">฿'+m.price+'</span>'+
+     '<div class="flex gap-2">'+
+      '<button onclick="openModal('+m.id+')" class="text-xs border border-white/15 px-3 py-2 rounded-full hover:border-ember hover:text-ember transition">รายละเอียด</button>'+
+      '<button onclick="add('+m.id+')" class="text-xs bg-ember text-charcoal font-semibold px-3.5 py-2 rounded-full hover:scale-105 transition">+ เพิ่ม</button>'+
+     '</div>'+
+    '</div>'+
+   '</div></article>';
+ }).join('');
 }
 
-/* ---------- MODAL ---------- */
 function openModal(id){
-  const m=MENU.find(x=>x.id===id);
-  const bar=(l,v,max,u)=>`<div class="mb-2.5"><div class="flex justify-between text-xs mb-1"><span class="text-cream/60">${l}</span><span class="font-semibold">${v}${u}</span></div>
-    <div class="h-1.5 bg-white/10 rounded-full"><div class="h-full bg-lime rounded-full" style="width:${Math.min(v/max*100,100)}%"></div></div></div>`;
-  document.getElementById('modalBox').innerHTML=`
-        <div class="h-56 relative overflow-hidden" style="background:linear-gradient(140deg,${m.bg},#1A1614)">
-      ${m.photo ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">` : `<span class="w-full h-full grid place-items-center text-7xl">${m.img}</span>`}
-      <div class="absolute inset-0 bg-gradient-to-t from-panel/70 via-transparent to-transparent"></div>
-      <button onclick="closeModal()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/50 hover:bg-ember hover:text-charcoal transition">✕</button>
-    </div>
-    <div class="p-6">
-      <div class="flex flex-wrap gap-1.5 mb-2">${m.tags.map(t=>`<span class="bg-lime/20 text-lime text-[10px] px-2 py-0.5 rounded-full">${t}</span>`).join('')}</div>
-      <h3 class="font-head font-bold text-xl">${m.name}</h3>
-      <p class="text-cream/60 text-sm mt-2">${m.desc}</p>
-
-      <h5 class="font-head font-bold mt-6 mb-2 text-sm">🥘 ส่วนผสม</h5>
-      <div class="flex flex-wrap gap-1.5">${m.ing.map(i=>`<span class="bg-white/8 text-xs px-2.5 py-1 rounded-lg">${i}</span>`).join('')}</div>
-
-      <h5 class="font-head font-bold mt-6 mb-3 text-sm">📊 ข้อมูลโภชนาการ (ต่อ 1 จาน)</h5>
-      ${bar('พลังงาน',m.kcal,800,' kcal')}
-      ${bar('โปรตีน',m.protein,50,' g')}
-      ${bar('คาร์โบไฮเดรต',m.carb,80,' g')}
-      ${bar('ไขมัน',m.fat,40,' g')}
-      ${bar('โซเดียม',m.sodium,2000,' mg')}
-
-      <div class="bg-chili/12 border border-chili/25 rounded-xl p-3 mt-4">
-        <p class="text-xs"><b class="text-chili">⚠️ สารก่อภูมิแพ้:</b> <span class="text-cream/70">${m.allergen}</span></p>
-      </div>
-      <div class="flex items-center gap-3 mt-5">
-        <span class="font-head font-bold text-2xl text-ember">฿${m.price}</span>
-        <button onclick="add(${m.id});closeModal()" class="flex-1 bg-ember text-charcoal font-bold py-3 rounded-full hover:scale-[1.02] transition">เพิ่มลงตะกร้า</button>
-      </div>
-    </div>`;
-  document.getElementById('modal').classList.remove('hidden');
-  document.body.style.overflow='hidden';
+ var m=MENU.filter(function(x){return x.id===id})[0];
+ function bar(l,v,max,u){
+  return '<div class="mb-2.5"><div class="flex justify-between text-xs mb-1"><span class="text-cream/60">'+l+'</span><span class="font-semibold">'+v+u+'</span></div>'+
+  '<div class="h-1.5 bg-white/10 rounded-full"><div class="h-full bg-lime rounded-full" style="width:'+Math.min(v/max*100,100)+'%"></div></div></div>';
+ }
+ var head = m.photo
+  ? '<img src="'+m.photo+'" alt="'+m.name+'" class="w-full h-full object-cover">'
+  : '<span class="w-full h-full grid place-items-center text-7xl">'+m.img+'</span>';
+ document.getElementById('modalBox').innerHTML=
+  '<div class="h-56 relative overflow-hidden" style="background:linear-gradient(140deg,'+m.bg+',#1A1614)">'+head+
+   '<div class="absolute inset-0 bg-gradient-to-t from-panel/70 via-transparent to-transparent"></div>'+
+   '<button onclick="closeModal()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/50 hover:bg-ember hover:text-charcoal transition">✕</button></div>'+
+  '<div class="p-6">'+
+   '<div class="flex flex-wrap gap-1.5 mb-2">'+m.tags.map(function(t){return '<span class="bg-lime/20 text-lime text-[10px] px-2 py-0.5 rounded-full">'+t+'</span>'}).join('')+'</div>'+
+   '<h3 class="font-head font-bold text-xl">'+m.name+'</h3>'+
+   '<p class="text-cream/60 text-sm mt-2">'+m.desc+'</p>'+
+   '<h5 class="font-head font-bold mt-6 mb-2 text-sm">🥘 ส่วนผสม</h5>'+
+   '<div class="flex flex-wrap gap-1.5">'+m.ing.map(function(i){return '<span class="bg-white/10 text-xs px-2.5 py-1 rounded-lg">'+i+'</span>'}).join('')+'</div>'+
+   '<h5 class="font-head font-bold mt-6 mb-3 text-sm">📊 ข้อมูลโภชนาการ (ต่อ 1 จาน)</h5>'+
+   bar('พลังงาน',m.kcal,800,' kcal')+bar('โปรตีน',m.protein,50,' g')+bar('คาร์โบไฮเดรต',m.carb,80,' g')+bar('ไขมัน',m.fat,40,' g')+bar('โซเดียม',m.sodium,2000,' mg')+
+   '<div class="bg-chili/15 border border-chili/25 rounded-xl p-3 mt-4"><p class="text-xs"><b class="text-chili">⚠️ สารก่อภูมิแพ้:</b> <span class="text-cream/70">'+m.allergen+'</span></p></div>'+
+   '<div class="flex items-center gap-3 mt-5"><span class="font-head font-bold text-2xl text-ember">฿'+m.price+'</span>'+
+   '<button onclick="add('+m.id+');closeModal()" class="flex-1 bg-ember text-charcoal font-bold py-3 rounded-full hover:scale-[1.02] transition">เพิ่มลงตะกร้า</button></div>'+
+  '</div>';
+ document.getElementById('modal').classList.remove('hidden');
+ document.body.style.overflow='hidden';
 }
 function closeModal(){document.getElementById('modal').classList.add('hidden');document.body.style.overflow=''}
 
-/* ---------- BUILD YOUR OWN ---------- */
-const OPT={
+var OPT={
  "1. เลือกฐาน":[["ข้าวหอมมะลิ",0,240,5],["ข้าวไรซ์เบอร์รี",10,220,6],["เส้นบุก",15,30,1],["คีนัว",20,190,8],["สลัดผัก",10,45,3]],
  "2. เลือกโปรตีน":[["อกไก่",0,140,28],["หมูสับ",0,210,22],["กุ้งสด",30,110,24],["แซลมอน",50,230,25],["เต้าหู้ไข่",0,120,12]],
  "3. สไตล์ผัด":[["กะเพรา",0,90,2],["พริกแกงใต้",10,130,3],["ซีอิ๊วดำ",0,110,2],["พริกเกลือ",0,100,2]],
  "4. ความเผ็ด":[["ไม่เผ็ด",0,0,0],["เผ็ดน้อย",0,0,0],["เผ็ดกลาง",0,0,0],["เผ็ดมาก",0,0,0],["เผ็ดสุดโต่ง",0,0,0]]
 };
-const pick={};
-document.getElementById('builder').innerHTML=Object.entries(OPT).map(([g,items],gi)=>`
-  <div><p class="text-xs text-cream/50 mb-2">${g}</p><div class="space-y-1.5">
-  ${items.map((it,i)=>`<button onclick="setOpt(${gi},${i})" data-g="${gi}" data-i="${i}"
-    class="opt w-full text-left text-sm px-3 py-2 rounded-lg border border-white/10 hover:border-ember transition">
-    ${it[0]}${it[1]?` <span class="text-ember text-xs">+฿${it[1]}</span>`:''}</button>`).join('')}
-  </div></div>`).join('');
+var pick={};
+document.getElementById('builder').innerHTML=Object.keys(OPT).map(function(g,gi){
+ return '<div><p class="text-xs text-cream/50 mb-2">'+g+'</p><div class="space-y-1.5">'+
+ OPT[g].map(function(it,i){
+  return '<button onclick="setOpt('+gi+','+i+')" data-g="'+gi+'" data-i="'+i+'" class="opt w-full text-left text-sm px-3 py-2 rounded-lg border border-white/10 hover:border-ember transition">'+
+  it[0]+(it[1]?' <span class="text-ember text-xs">+฿'+it[1]+'</span>':'')+'</button>';
+ }).join('')+'</div></div>';
+}).join('');
 
-function setOpt(g,i){pick[g]=i;
-  document.querySelectorAll('.opt').forEach(b=>{
-    b.className='opt w-full text-left text-sm px-3 py-2 rounded-lg border transition '+
-    (pick[b.dataset.g]==b.dataset.i?'border-ember bg-ember/15 text-ember':'border-white/10 hover:border-ember');
-  });
-  let p=99,k=0,pr=0;
-  Object.values(OPT).forEach((items,gi)=>{if(pick[gi]!=null){const s=items[pick[gi]];p+=s[1];k+=s[2];pr+=s[3]}});
-  bKcal.textContent=k; bProt.textContent=pr; bPrice.textContent='฿'+p;
+function setOpt(g,i){
+ pick[g]=i;
+ document.querySelectorAll('.opt').forEach(function(b){
+  b.className='opt w-full text-left text-sm px-3 py-2 rounded-lg border transition '+
+  (pick[b.dataset.g]==b.dataset.i?'border-ember bg-ember/15 text-ember':'border-white/10 hover:border-ember');
+ });
+ var p=99,k=0,pr=0;
+ Object.keys(OPT).forEach(function(g2,gi){
+  if(pick[gi]!=null){var s=OPT[g2][pick[gi]];p+=s[1];k+=s[2];pr+=s[3]}
+ });
+ document.getElementById('bKcal').textContent=k;
+ document.getElementById('bProt').textContent=pr;
+ document.getElementById('bPrice').textContent='฿'+p;
 }
 function addCustom(){
-  if(Object.keys(pick).length<3){alert('กรุณาเลือกฐาน โปรตีน และสไตล์ผัดก่อนนะครับ');return}
-  const names=Object.values(OPT).map((it,gi)=>pick[gi]!=null?it[pick[gi]][0]:null).filter(Boolean);
-  cart.push({name:'🥣 จานจัดเอง: '+names.join(' + '),price:parseInt(bPrice.textContent.replace('฿',''))});
-  updateCart(); toggleCart();
+ if(Object.keys(pick).length<3){alert('กรุณาเลือกฐาน โปรตีน และสไตล์ผัดก่อนนะครับ');return}
+ var names=Object.keys(OPT).map(function(g,gi){return pick[gi]!=null?OPT[g][pick[gi]][0]:null}).filter(Boolean);
+ cart.push({name:'🥣 จานจัดเอง: '+names.join(' + '),price:parseInt(document.getElementById('bPrice').textContent.replace('฿',''))});
+ updateCart();toggleCart();
 }
 
-/* ---------- CART ---------- */
-function add(id){const m=MENU.find(x=>x.id===id);cart.push({name:m.name,price:m.price});updateCart();
-  const b=document.getElementById('cartBadge');b.animate([{transform:'scale(1)'},{transform:'scale(1.6)'},{transform:'scale(1)'}],300)}
+function add(id){
+ var m=MENU.filter(function(x){return x.id===id})[0];
+ cart.push({name:m.name,price:m.price});updateCart();
+ document.getElementById('cartBadge').animate([{transform:'scale(1)'},{transform:'scale(1.6)'},{transform:'scale(1)'}],300);
+}
 function removeItem(i){cart.splice(i,1);updateCart()}
 function updateCart(){
-  const total=cart.reduce((s,i)=>s+i.price,0);
-  cartBadge.textContent=cart.length; cartCount.textContent=cart.length+' รายการ'; cartTotal.textContent='฿'+total;
-  cartList.innerHTML=cart.length?cart.map((it,i)=>`
-    <div class="flex justify-between items-start gap-3 bg-white/5 p-3 rounded-xl">
-      <p class="text-sm flex-1">${it.name}</p>
-      <div class="text-right"><p class="text-ember font-semibold">฿${it.price}</p>
-      <button onclick="removeItem(${i})" class="text-[11px] text-cream/40 hover:text-chili">ลบ</button></div>
-    </div>`).join(''):'<p class="text-center text-cream/40 py-12 text-sm">ยังไม่มีรายการ<br>เลือกเมนูอร่อยๆ กันเลย 🍽️</p>';
+ var total=cart.reduce(function(s,i){return s+i.price},0);
+ document.getElementById('cartBadge').textContent=cart.length;
+ document.getElementById('cartCount').textContent=cart.length+' รายการ';
+ document.getElementById('cartTotal').textContent='฿'+total;
+ document.getElementById('cartList').innerHTML=cart.length?cart.map(function(it,i){
+  return '<div class="flex justify-between items-start gap-3 bg-white/5 p-3 rounded-xl"><p class="text-sm flex-1">'+it.name+'</p>'+
+  '<div class="text-right"><p class="text-ember font-semibold">฿'+it.price+'</p>'+
+  '<button onclick="removeItem('+i+')" class="text-[11px] text-cream/40 hover:text-chili">ลบ</button></div></div>';
+ }).join(''):'<p class="text-center text-cream/40 py-12 text-sm">ยังไม่มีรายการ<br>เลือกเมนูอร่อยๆ กันเลย 🍽️</p>';
 }
 function toggleCart(){document.getElementById('cartWrap').classList.toggle('hidden')}
 function checkout(){
-  if(!cart.length){alert('ตะกร้ายังว่างอยู่นะครับ');return}
-  alert('✅ รับออร์เดอร์แล้ว!\n\nยอดรวม ฿'+cart.reduce((s,i)=>s+i.price,0)+'\nประมาณ 13 นาที อาหารพร้อมเสิร์ฟ\n\n(เดโม — เชื่อมต่อระบบชำระเงินจริงในขั้นตอน Production)');
-  cart=[];updateCart();toggleCart();
+ if(!cart.length){alert('ตะกร้ายังว่างอยู่นะครับ');return}
+ alert('✅ รับออร์เดอร์แล้ว!\n\nยอดรวม ฿'+cart.reduce(function(s,i){return s+i.price},0)+'\nประมาณ 13 นาที อาหารพร้อมเสิร์ฟ\n\n(เดโม — เชื่อมต่อระบบชำระเงินจริงในขั้นตอน Production)');
+ cart=[];updateCart();toggleCart();
 }
 render();
 </script>
