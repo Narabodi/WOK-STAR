@@ -124,34 +124,35 @@ tailwind.config = {
 <script>
 /* ---------- DATA ---------- */
 const MENU=[
- {id:1,name:"กะเพราคางแซลมอน ไข่ออนเซ็น",price:149,img:"🐟",bg:"#3a2c22",kcal:520,protein:34,carb:48,fat:22,sodium:780,spice:3,
+ const MENU=[
+ {id:1,name:"กะเพราคางแซลมอน ไข่ออนเซ็น",price:149,photo:"images/menu-1.jpg",img:"🐟",bg:"#3a2c22",kcal:520,protein:34,carb:48,fat:22,sodium:780,spice:3,
   tags:["โปรตีนสูง","โอเมก้า-3"],ing:["คางแซลมอนนอร์เวย์","ใบกะเพราแดง","พริกขี้หนูสวน","กระเทียมไทย","ไข่ออนเซ็น","ข้าวหอมมะลิ"],
   allergen:"ปลา, ไข่, ถั่วเหลือง",desc:"คางแซลมอนย่างไฟจนหนังกรอบ ผัดกะเพราไฟแรงกลิ่นหอมฉุย ราดไข่ออนเซ็นเยิ้มๆ"},
- {id:2,name:"ข้าวผัดต้มยำกุ้ง ซอสทรัฟเฟิล",price:159,img:"🍤",bg:"#402a20",kcal:610,protein:31,carb:66,fat:24,sodium:920,spice:3,
+ {id:2,name:"ข้าวผัดต้มยำกุ้ง ซอสทรัฟเฟิล",price:159,photo:"images/menu-2.jpg",img:"🍤",bg:"#402a20",kcal:610,protein:31,carb:66,fat:24,sodium:920,spice:3,
   tags:["โปรตีนสูง","ซิกเนเจอร์"],ing:["กุ้งแม่น้ำ","น้ำพริกเผา","ตะไคร้ ใบมะกรูด","ซอสทรัฟเฟิลดำ","ข้าวหอมมะลิ"],
   allergen:"กุ้ง, นม",desc:"ต้มยำจัดจ้านเจอกลิ่นทรัฟเฟิลหรูๆ ความอร่อยที่ไม่มีใครคาดคิด"},
- {id:3,name:"ผัดซีอิ๊วเส้นบุก โปรตีนคู่",price:129,img:"🍜",bg:"#2b3326",kcal:340,protein:38,carb:18,fat:11,sodium:640,spice:0,
+ {id:3,name:"ผัดซีอิ๊วเส้นบุก โปรตีนคู่",price:129,photo:"images/menu-3.jpg",img:"🍜",bg:"#2b3326",kcal:340,protein:38,carb:18,fat:11,sodium:640,spice:0,
   tags:["คีโต","ต่ำกว่า 500 kcal","โปรตีนสูง"],ing:["เส้นบุกญี่ปุ่น","อกไก่","กุ้งสด","คะน้าฮ่องกง","ซีอิ๊วดำหวานสูตรลดน้ำตาล"],
   allergen:"กุ้ง, ถั่วเหลือง",desc:"ผัดซีอิ๊วรสคุ้นเคยแต่แคลอรี่ต่ำกว่าครึ่ง เส้นบุกหนึบ โปรตีนแน่นถึง 38 กรัม"},
- {id:4,name:"คั่วกลิ้งไก่กรอบ ข้าวคีนัว",price:139,img:"🌶️",bg:"#3d2320",kcal:480,protein:33,carb:42,fat:18,sodium:810,spice:5,
+ {id:4,name:"คั่วกลิ้งไก่กรอบ ข้าวคีนัว",price:139,photo:"images/menu-4.jpg",img:"🌶️",bg:"#3d2320",kcal:480,protein:33,carb:42,fat:18,sodium:810,spice:5,
   tags:["ไฟเบอร์สูง","ต่ำกว่า 500 kcal"],ing:["ไก่บ้านสับ","พริกแกงใต้สูตรโบราณ","ใบมะกรูดซอย","คีนัวขาว-แดง"],
   allergen:"กุ้ง (กะปิ)",desc:"ใต้แท้เผ็ดจัดจ้าน คู่ข้าวคีนัวไฟเบอร์สูง อิ่มนานไม่ง่วง"},
- {id:5,name:"ข้าวไข่ข้นปู ซอสมะขามคาราเมล",price:169,img:"🦀",bg:"#3d3320",kcal:590,protein:29,carb:58,fat:27,sodium:700,spice:1,
+ {id:5,name:"ข้าวไข่ข้นปู ซอสมะขามคาราเมล",price:169,photo:"images/menu-5.jpg",img:"🦀",bg:"#3d3320",kcal:590,protein:29,carb:58,fat:27,sodium:700,spice:1,
   tags:["โปรตีนสูง","ถ่ายรูปสวย"],ing:["เนื้อปูก้อน","ไข่ไก่สด 3 ฟอง","ครีมสด","ซอสมะขามเปียกเคี่ยว","ข้าวหอมมะลิ"],
   allergen:"ปู, ไข่, นม",desc:"ไข่ข้นเยิ้มไหลนุ่ม เนื้อปูเต็มคำ ตัดรสด้วยมะขามคาราเมลเปรี้ยวหวาน"},
- {id:6,name:"กะเพราเห็ดทรัฟเฟิล Plant-Based",price:119,img:"🍄",bg:"#26301f",kcal:390,protein:21,carb:44,fat:14,sodium:590,spice:2,
+ {id:6,name:"กะเพราเห็ดทรัฟเฟิล Plant-Based",price:119,photo:"images/menu-6.jpg",img:"🍄",bg:"#26301f",kcal:390,protein:21,carb:44,fat:14,sodium:590,spice:2,
   tags:["วีแกน","ต่ำกว่า 500 kcal"],ing:["เห็ดออรินจิ เห็ดแครง เห็ดหอม","โปรตีนถั่วเหลืองสกัด","ใบกะเพรา","น้ำมันทรัฟเฟิล","ข้าวกล้อง"],
   allergen:"ถั่วเหลือง",desc:"วีแกน 100% แต่อูมามิแน่นกว่าเนื้อ ด้วยเห็ด 3 ชนิดและน้ำมันทรัฟเฟิล"},
- {id:7,name:"ราดหน้าเส้นบุก น้ำข้นคอลลาเจน",price:135,img:"🍲",bg:"#2c2b23",kcal:410,protein:30,carb:32,fat:16,sodium:520,spice:0,
+ {id:7,name:"ราดหน้าเส้นบุก น้ำข้นคอลลาเจน",price:135,photo:"images/menu-7.jpg",img:"🍲",bg:"#2c2b23",kcal:410,protein:30,carb:32,fat:16,sodium:520,spice:0,
   tags:["โซเดียมต่ำ","ต่ำกว่า 500 kcal"],ing:["เส้นบุก","น้ำซุปกระดูกเคี่ยว 8 ชม.","หมูหมัก","คะน้ายอด","เห็ดหอมสด"],
   allergen:"ถั่วเหลือง",desc:"น้ำราดข้นจากคอลลาเจนธรรมชาติ ไม่ใช้แป้งมันเยอะ โซเดียมต่ำกว่าราดหน้าทั่วไป 35%"},
- {id:8,name:"หมูกรอบพริกเกลือ ข้าวไรซ์เบอร์รี",price:145,img:"🥓",bg:"#3a2b26",kcal:540,protein:28,carb:50,fat:25,sodium:760,spice:2,
+ {id:8,name:"หมูกรอบพริกเกลือ ข้าวไรซ์เบอร์รี",price:145,photo:"images/menu-8.jpg",img:"🥓",bg:"#3a2b26",kcal:540,protein:28,carb:50,fat:25,sodium:760,spice:2,
   tags:["GI ต่ำ","ทอดน้ำมันน้อย"],ing:["หมูสามชั้น Air-fried","พริกไทยดำโขลก","กระเทียมเจียว","ข้าวไรซ์เบอร์รี"],
   allergen:"ถั่วเหลือง",desc:"หมูกรอบทอดด้วยลมร้อน ลดน้ำมัน 40% แต่ยังกรอบดัง เสิร์ฟคู่ข้าวไรซ์เบอร์รี"},
- {id:9,name:"ผัดพริกแกงแซลมอน Keto Bowl",price:165,img:"🥗",bg:"#2a3128",kcal:430,protein:36,carb:9,fat:28,sodium:680,spice:4,
+ {id:9,name:"ผัดพริกแกงแซลมอน Keto Bowl",price:165,photo:"images/menu-9.jpg",img:"🥗",bg:"#2a3128",kcal:430,protein:36,carb:9,fat:28,sodium:680,spice:4,
   tags:["คีโต","ต่ำกว่า 500 kcal","โปรตีนสูง"],ing:["แซลมอนแล่สด","พริกแกงเผ็ดสูตรบ้าน","ถั่วฝักยาว","ดอกกะหล่ำสับแทนข้าว"],
   allergen:"ปลา, กุ้ง (กะปิ)",desc:"คาร์บแค่ 9 กรัม ใช้ดอกกะหล่ำสับแทนข้าว สายคีโตกินได้สบายใจ"},
- {id:10,name:"ข้าวยำทูน่าสไปซี่ สไตล์โพเกะ",price:139,img:"🍱",bg:"#28312c",kcal:450,protein:32,carb:47,fat:13,sodium:610,spice:2,
+ {id:10,name:"ข้าวยำทูน่าสไปซี่ สไตล์โพเกะ",price:139,photo:"images/menu-10.jpg",img:"🍱",bg:"#28312c",kcal:450,protein:32,carb:47,fat:13,sodium:610,spice:2,
   tags:["ไขมันต่ำ","ต่ำกว่า 500 kcal"],ing:["ทูน่าเกรดซาชิมิ","ข้าวกล้องหอมมะลิ","อะโวคาโด","ตะไคร้ ใบมะกรูดซอย","น้ำบูดูสูตรใส"],
   allergen:"ปลา, งา",desc:"ข้าวยำปักษ์ใต้เจอ Poke Bowl ฮาวาย สดชื่น เบาท้อง โปรตีนสูง"}
 ];
@@ -181,8 +182,9 @@ function render(){
   document.getElementById('empty').classList.toggle('hidden',list.length>0);
   document.getElementById('grid').innerHTML=list.map(m=>`
    <article class="bg-panel rounded-2xl overflow-hidden fade-in group">
-     <div class="card-img h-44 relative grid place-items-center text-6xl" style="background:linear-gradient(140deg,${m.bg},#1A1614)">
-       <span class="group-hover:scale-110 transition duration-300">${m.img}</span>
+          <div class="h-44 relative overflow-hidden" style="background:linear-gradient(140deg,${m.bg},#1A1614)">
+       ${m.photo ? `<img src="${m.photo}" alt="${m.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">` : `<span class="w-full h-full grid place-items-center text-6xl">${m.img}</span>`}
+
        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
          ${m.tags.slice(0,2).map(t=>`<span class="bg-lime/20 text-lime text-[10px] px-2 py-0.5 rounded-full backdrop-blur">${t}</span>`).join('')}
        </div>
@@ -210,8 +212,10 @@ function openModal(id){
   const bar=(l,v,max,u)=>`<div class="mb-2.5"><div class="flex justify-between text-xs mb-1"><span class="text-cream/60">${l}</span><span class="font-semibold">${v}${u}</span></div>
     <div class="h-1.5 bg-white/10 rounded-full"><div class="h-full bg-lime rounded-full" style="width:${Math.min(v/max*100,100)}%"></div></div></div>`;
   document.getElementById('modalBox').innerHTML=`
-    <div class="h-48 grid place-items-center text-7xl relative" style="background:linear-gradient(140deg,${m.bg},#1A1614)">
-      ${m.img}<button onclick="closeModal()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/40 hover:bg-ember hover:text-charcoal transition">✕</button>
+        <div class="h-56 relative overflow-hidden" style="background:linear-gradient(140deg,${m.bg},#1A1614)">
+      ${m.photo ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">` : `<span class="w-full h-full grid place-items-center text-7xl">${m.img}</span>`}
+      <div class="absolute inset-0 bg-gradient-to-t from-panel/70 via-transparent to-transparent"></div>
+      <button onclick="closeModal()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/50 hover:bg-ember hover:text-charcoal transition">✕</button>
     </div>
     <div class="p-6">
       <div class="flex flex-wrap gap-1.5 mb-2">${m.tags.map(t=>`<span class="bg-lime/20 text-lime text-[10px] px-2 py-0.5 rounded-full">${t}</span>`).join('')}</div>
